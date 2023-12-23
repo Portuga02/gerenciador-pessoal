@@ -3,13 +3,22 @@
     <nav>
 
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about">Usuários</router-link>
 
     </nav>
     <router-view />
   </div>
 </template>
 
+<script>
+export default {
+  created() {
+    this.$http.get('/ping').then((response) => {
+      console.log(response);
+    })
+  }
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
